@@ -12,18 +12,42 @@
 
 // export default Card;
 
-import {Image, Text, View} from 'react-native';
-import TProductsStyle from '../styles/TProductsStyle';
+import {Image, StyleSheet, Text, View} from 'react-native';
 
 const Card = (props) => {
   return (
-    <View style={TProductsStyle.CardBody}>
-      <Image style={TProductsStyle.CardImage} source= {props.image}/>
-      <Text style={TProductsStyle.CardTitle}> {props.name} </Text>
-      <Text  style={TProductsStyle.CardPrice}>{props.price} </Text>
+    <View style={CardStyle.CardBody}>
+      <Image style={CardStyle.CardImage} source= {props.image}/>
+      <Text style={CardStyle.CardTitle}> {props.name} </Text>
+      <Text  style={CardStyle.CardPrice}>{props.price} </Text>
     </View>
   );
 };
 
 export default Card;
+
+const CardStyle = StyleSheet.create ({
+  CardBody: {
+    width: 110,
+    height: 162,
+    marginRight: 10,
+    marginTop: 16,
+    backgroundColor: '#F5F7FA',
+  },
+
+  CardImage: {
+    width: '100%',
+    height: 99,
+    marginBottom: 14
+  },
+
+  CardTitle: {
+    height: 63,
+    fontWeight: '600',
+    fontSize: 16,
+    lineHeight: 20,
+    color: '#090F47',
+    marginLeft: 14,
+  },
+});
 
